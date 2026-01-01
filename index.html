@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReLearn AI - Join the Waitlist</title>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0f1c;
+  --accent1: #7c3aed;
+  --accent2: #06b6d4;
+  --muted: #9ca3af;
+  --text-light: #f1f5f9;
+  --green: #10b981;
+  --glow-purple: rgba(124, 58, 237, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-effects::before {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.15), transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.bg-effects::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6,182,212,0.1), transparent 70%);
+  bottom: -150px;
+  left: -150px;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 30px) scale(1.05); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 60px;
+  background: rgba(10, 15, 28, 0.8);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-badge {
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 80px 0 40px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 24px;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.3); }
+  50% { box-shadow: 0 0 0 10px rgba(16,185,129,0); }
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-size: 84px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 28px;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Signup Box */
+.signup-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.signup-input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 16px;
+  color: var(--text-light);
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: var(--accent1);
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.2);
+}
+
+.signup-input::placeholder { color: var(--muted); }
+
+.signup-btn {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  border: none;
+  border-radius: 12px;
+  padding: 16px 28px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.signup-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--glow-purple);
+}
+
+.signup-btn.loading { pointer-events: none; opacity: 0.8; }
+.signup-btn .btn-text { transition: opacity 0.3s; }
+.signup-btn.loading .btn-text { opacity: 0; }
+
+.signup-btn .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spin 0.8s linear infinite;
+}
+
+.signup-btn.loading .spinner { opacity: 1; }
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.form-note {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+/* Success State */
+.success-state {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-state.show {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-icon { font-size: 64px; margin-bottom: 20px; }
+
+.success-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.success-text { color: var(--muted); font-size: 16px; line-height: 1.6; }
+
+.success-position {
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: rgba(124,58,237,0.1);
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.success-position .label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+
+.success-position .number {
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Social Proof */
+.social-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 20px;
+  border-radius: 12px;
+}
+
+.proof-avatars { display: flex; }
+
+.proof-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  border: 2px solid var(--bg);
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.proof-avatar:first-child { margin-left: 0; }
+
+.proof-text { font-size: 14px; color: var(--muted); }
+.proof-text strong { color: var(--text-light); font-weight: 700; }
+.proof-stat { font-size: 14px; color: var(--muted); }
+.proof-stat strong { color: var(--accent2); font-weight: 700; }
+
+/* Section Headers */
+.section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Features Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(124,58,237,0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(124,58,237,0.15);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.feature-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feature-tag {
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent2);
+}
+
+/* How it Works */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  opacity: 0.3;
+}
+
+.step-card {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0 auto 24px;
+  color: #fff;
+  box-shadow: 0 10px 40px var(--glow-purple);
+}
+
+.step-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.step-card p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Problem Section */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.problem-card {
+  background: rgba(239,68,68,0.05);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.problem-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.problem-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.problem-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.1));
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 32px;
+  padding: 60px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-box h2 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-box p {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.cta-form {
+  display: flex;
+  gap: 12px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.cta-form input {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: var(--text-light);
+  font-family: inherit;
+}
+
+.cta-form input:focus {
+  outline: none;
+  border-color: var(--accent1);
+}
+
+.cta-form input::placeholder { color: var(--muted); }
+
+.cta-form button {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  border: none;
+  border-radius: 12px;
+  padding: 16px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cta-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--glow-purple);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-text { font-size: 14px; color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .steps-grid::before {
+    display: none;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px 24px;
+  }
+  .hero h1 { font-size: 48px; letter-spacing: -1px; }
+  .hero-subtitle { font-size: 18px; }
+  .signup-box { padding: 28px 20px; }
+  .social-proof { flex-direction: column; gap: 12px; }
+  .nav { flex-direction: column; gap: 16px; }
+  .section-header h2 { font-size: 32px; }
+  .feature-card { padding: 28px; }
+  .cta-form { flex-direction: column; }
+  .cta-box { padding: 40px 24px; }
+  .cta-box h2 { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-effects"></div>
+
+<nav class="nav">
+  <div class="logo">ReLearn</div>
+  <div class="nav-badge">🚀 Launching Soon</div>
+</nav>
+
+<div class="container">
+  <!-- Hero Section -->
+  <main class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span id="signupCount">2,847</span> students already on the waitlist
+    </div>
+
+    <h1>Learn Smarter,<br><span>Not Harder</span></h1>
+
+    <p class="hero-subtitle">
+      The AI-powered study platform that transforms how you learn. Turn boring notes into engaging content,
+      track your progress, and actually remember what you study.
+    </p>
+
+    <div class="signup-box">
+      <form class="signup-form" id="signupForm">
+        <input type="text" class="signup-input" id="nameInput" placeholder="Your name" required>
+        <input type="email" class="signup-input" id="emailInput" placeholder="your@email.com" required>
+        <div class="g-recaptcha" data-sitekey="6LeDfD0sAAAAAFf2mat_6IlHdWhKopE-txrPPhqp" data-theme="dark"></div>
+        <button type="submit" class="signup-btn" id="submitBtn">
+          <span class="btn-text">Join the Waitlist →</span>
+          <span class="spinner"></span>
+        </button>
+        <p class="form-note">🔒 No spam, ever. We'll only email you about launch updates.</p>
+      </form>
+
+      <div class="success-state" id="successState">
+        <div class="success-icon">🎉</div>
+        <h3 class="success-title">You're on the list!</h3>
+        <p class="success-text">We'll notify you when ReLearn launches.<br>Share with friends to move up the waitlist!</p>
+        <div class="success-position">
+          <div class="label">Your position</div>
+          <div class="number">#<span id="positionNumber">2,848</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-proof">
+      <div class="proof-item">
+        <div class="proof-avatars">
+          <div class="proof-avatar">S</div>
+          <div class="proof-avatar">M</div>
+          <div class="proof-avatar">A</div>
+          <div class="proof-avatar">+</div>
+        </div>
+        <span class="proof-text"><strong id="proofCount">2,847</strong> students waiting</span>
+      </div>
+      <div class="proof-item">
+        <span class="proof-stat">📈 <strong>+127</strong> signups today</span>
+      </div>
+      <div class="proof-item">
+        <span class="proof-stat">🎓 For students, <strong>by students</strong></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Problem Section -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Sound Familiar?</h2>
+      <p>Traditional studying is broken. We've all been there.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="problem-icon">😴</span>
+        <div>
+          <h4>Boring Textbooks</h4>
+          <p>Dense paragraphs of jargon that put you to sleep. You read the same page 5 times and still don't get it.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">🤯</span>
+        <div>
+          <h4>Information Overload</h4>
+          <p>So much content, no idea what's actually important. You study everything but remember nothing.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">📱</span>
+        <div>
+          <h4>Constant Distractions</h4>
+          <p>TikTok, Instagram, YouTube... 5 minutes of "break" turns into 2 hours of scrolling.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">❓</span>
+        <div>
+          <h4>No Feedback</h4>
+          <p>You think you understand until the exam hits. No way to know what you actually know vs. what you don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Everything You Need to Ace Your Classes</h2>
+      <p>Six powerful tools working together to transform how you learn</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">✨</span>
+        <h3>AI ReLearn Engine</h3>
+        <p>Upload any content and our AI transforms dense, boring material into explanations that actually make sense.
+           Love basketball? Learn physics through slam dunks. Into cooking? Master chemistry through recipes.
+           We adapt to YOUR interests so concepts finally click.</p>
+        <div class="feature-highlights">
+          <span class="feature-tag">Personalized analogies</span>
+          <span class="feature-tag">Any subject</span>
+          <span class="feature-tag">Instant simplification</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🎴</span>
+        <h3>Smart Flashcards</h3>
+        <p>Automatically generate flashcards from your notes, textbooks, or any content in seconds.
+           Our spaced repetition algorithm tracks what you know and what you don't, showing you cards
+           at the perfect moment for maximum retention. Stop wasting time on stuff you already know.</p>
+        <div class="feature-highlights">
+          <span class="feature-tag">Auto-generated</span>
+          <span class="feature-tag">Spaced repetition</span>
+          <span class="feature-tag">Mastery tracking</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📝</span>
+        <h3>Practice Tests</h3>
+        <p>Generate unlimited practice exams that adapt to your knowledge level. Get instant feedback
+           with detailed explanations for every question. Identify weak spots before your real exam
+           and build confidence knowing exactly what to expect.</p>
+        <div class="feature-highlights">
+          <span class="feature-tag">Unlimited tests</span>
+          <span class="feature-tag">Instant feedback</span>
+          <span class="feature-tag">Difficulty adapts</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📱</span>
+        <h3>Doom Scroll Mode</h3>
+        <p>Can't stop scrolling? We turned it into a superpower. Study in a TikTok-style vertical feed
+           with flashcards, bite-sized quizzes, and reward videos mixed in. It's so addictive you'll
+           forget you're actually learning. Turn procrastination into productivity.</p>
+        <div class="feature-highlights">
+          <span class="feature-tag">TikTok-style feed</span>
+          <span class="feature-tag">Reward system</span>
+          <span class="feature-tag">Addictive learning</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">🤖</span>
+        <h3>AI Tutor</h3>
+        <p>Your personal tutor available 24/7. Ask any question and get step-by-step explanations
+           tailored to your level. The AI knows your entire learning history, so it understands
+           exactly where you're struggling. Never feel stuck or alone again.</p>
+        <div class="feature-highlights">
+          <span class="feature-tag">24/7 available</span>
+          <span class="feature-tag">Knows your history</span>
+          <span class="feature-tag">Step-by-step help</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>Learning Analytics</h3>
+        <p>See exactly how you're progressing with detailed insights and visualizations. Track study time,
+           test scores, mastery levels, and identify your weak areas. Set goals, maintain streaks,
+           and watch yourself improve over time with data-driven learning.</p>
+        <div class="feature-highlights">
+          <span class="feature-tag">Progress tracking</span>
+          <span class="feature-tag">Weak area detection</span>
+          <span class="feature-tag">Study streaks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="section">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p>Get started in minutes, see results in days</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Upload Your Content</h3>
+        <p>Drop in your lecture notes, textbook PDFs, slides, or any study material. We handle all formats.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>AI Does the Heavy Lifting</h3>
+        <p>Our AI instantly creates flashcards, practice tests, and personalized explanations from your content.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Learn & Track Progress</h3>
+        <p>Study with engaging tools, see your analytics improve, and actually remember what you learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-section">
+    <div class="cta-box">
+      <h2>Ready to Study Smarter?</h2>
+      <p>Join thousands of students who are done with boring, ineffective studying.
+         Get early access and exclusive launch perks.</p>
+      <form class="cta-form" id="ctaForm">
+        <input type="email" id="ctaEmail" placeholder="your@email.com" required>
+        <button type="submit">Join Waitlist</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-text">© 2025 ReLearn AI · Built with ❤️ for learners everywhere</p>
+  </footer>
+</div>
+
+<script>
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzTUnfo957JdUL-R7wfsiBnxTdkpr-Rzgf7Hgkjwaz69_8q-GGeCvQltlry48sLQeMJ/exec';
+let baseCount = 2847;
+
+// Check if already signed up
+function hasAlreadySignedUp() {
+  return localStorage.getItem('relearnWaitlistSignedUp') === 'true';
+}
+
+function markAsSignedUp() {
+  localStorage.setItem('relearnWaitlistSignedUp', 'true');
+}
+
+// Show already signed up state
+function showAlreadySignedUp() {
+  document.getElementById('signupForm').style.display = 'none';
+  document.getElementById('successState').classList.add('show');
+  document.querySelector('.success-title').textContent = "You're already on the list!";
+  document.querySelector('.success-text').textContent = "We'll notify you when ReLearn launches.";
+  document.querySelector('.success-position').style.display = 'none';
+}
+
+// Check on page load
+if (hasAlreadySignedUp()) {
+  window.addEventListener('DOMContentLoaded', showAlreadySignedUp);
+}
+
+function updateCounts(extra = 0) {
+  const totalCount = baseCount + extra;
+  document.getElementById('signupCount').textContent = totalCount.toLocaleString();
+  document.getElementById('proofCount').textContent = totalCount.toLocaleString();
+}
+
+updateCounts();
+
+async function handleSignup(name, email) {
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: name || 'Friend', email })
+    });
+
+    // Since no-cors doesn't return data, we estimate position
+    const position = baseCount + Math.floor(Math.random() * 50) + 1;
+    return { success: true, position };
+  } catch (error) {
+    console.error('Signup error:', error);
+    return { success: false };
+  }
+}
+
+document.getElementById('signupForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // Check reCAPTCHA
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    alert('Please complete the reCAPTCHA');
+    return;
+  }
+
+  const name = document.getElementById('nameInput').value.trim();
+  const email = document.getElementById('emailInput').value.trim();
+  const btn = document.getElementById('submitBtn');
+
+  if (!name || !email) return;
+
+  btn.classList.add('loading');
+
+  const result = await handleSignup(name, email);
+
+  if (!result.success) {
+    btn.classList.remove('loading');
+    alert('Something went wrong. Please try again!');
+    grecaptcha.reset();
+    return;
+  }
+
+  // Mark as signed up
+  markAsSignedUp();
+
+  document.getElementById('positionNumber').textContent = result.position.toLocaleString();
+  btn.classList.remove('loading');
+  document.getElementById('signupForm').style.display = 'none';
+  document.getElementById('successState').classList.add('show');
+  createConfetti();
+});
+
+document.getElementById('ctaForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = document.getElementById('ctaEmail').value.trim();
+  const btn = e.target.querySelector('button');
+  if (!email) return;
+
+  // Check if already signed up
+  if (hasAlreadySignedUp()) {
+    alert("You're already on the waitlist!");
+    return;
+  }
+
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+
+  const result = await handleSignup('', email);
+
+  if (result.success) {
+    markAsSignedUp();
+    document.getElementById('ctaEmail').value = '';
+    btn.textContent = '✓ You\'re in!';
+    setTimeout(() => {
+      btn.textContent = 'Join Waitlist';
+      btn.disabled = false;
+    }, 3000);
+  } else {
+    btn.textContent = 'Join Waitlist';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again!');
+  }
+});
+
+function createConfetti() {
+  const colors = ['#7c3aed', '#06b6d4', '#10b981', '#f59e0b'];
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div');
+    confetti.style.cssText = `
+      position: fixed; width: 10px; height: 10px;
+      background: ${colors[Math.floor(Math.random() * colors.length)]};
+      top: -10px; left: ${Math.random() * 100}vw;
+      opacity: ${Math.random() + 0.5};
+      border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+      pointer-events: none; z-index: 1000;
+      animation: fall ${Math.random() * 3 + 2}s linear forwards;
+    `;
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 5000);
+  }
+  if (!document.getElementById('confetti-style')) {
+    const style = document.createElement('style');
+    style.id = 'confetti-style';
+    style.textContent = '@keyframes fall { to { transform: translateY(100vh) rotate(720deg); opacity: 0; } }';
+    document.head.appendChild(style);
+  }
+}
+
+function animateCounter(element, target) {
+  let current = 0;
+  const increment = target / 50;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) { current = target; clearInterval(timer); }
+    element.textContent = Math.floor(current).toLocaleString();
+  }, 30);
+}
+
+window.addEventListener('load', () => {
+  animateCounter(document.getElementById('signupCount'), baseCount + signups.length);
+});
+</script>
+
+</body>
+</html>
